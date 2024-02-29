@@ -1,0 +1,101 @@
+Endpoints:
+----------------------------------------------------------
+
+- POST login:
+
+/user/login -> /user/session
+(preferimos emplear sustantivos en los recursos ó endpoints, ya que la semántica de la acción es mejor encapsularla en el verbo HTTP)
+
+parámetros username y password en la query -> pasan al requestBody
+(normalmente no se envían en la URL/query datos sensibles como contraseñas. La URL puede ser logueada por algún subsistema)
+
+respuesta de éxito 200 -> mejor 201 (se ha creado una sesión)
+
+respuesta de éxito -> ahora devuelve un sessionToken (será el que la app debe guardar para autenticarse)
+
+- POST registro:
+
+/user/register -> /user
+(preferimos emplear sustantivos en los recursos ó endpoints, ya que la semántica de la acción es mejor encapsularla en el verbo HTTP)
+
+parámetros name, email, country, password, birthdate -> pasan al requestBody
+(normalmente no se envían en la URL/query datos sensibles como contraseñas. La URL puede ser logueada por algún subsistema)
+
+respuesta de éxito 200 -> mejor 201 (se ha creado una sesión)
+
+- GET búsqueda
+
+/search -> /flights
+(preferimos emplear sustantivos en los recursos ó endpoints, ya que la semántica de la acción es mejor encapsularla en el verbo HTTP)
+
+parámetro booleano bidirectional -> eliminado
+(ya que r_date [return_date] es opcional, podemos considerar que si se manda en la petición estamos buscando un vuelo con regreso, y en caso de que no viaje, el vuelo buscado es sencillo. Así no hay necesidad de implementar lógica en el servidor en caso de que bidirectional=true pero se haya omitido la r_date; lo cual sería un error)
+
+respuesta 200 -> modificada
+1) ahora se devuelven dos claves "cheapest" y "fastests", cada una conteniendo un array de vuelos que se mostrarán tal y como indica el wireframe "Top 3 baratos" y "Top 3 más rápidos"
+
+2) Cada 'vuelo' ahora:
+2.1) NO tiene el atributo "bidirectional" (misma explicación que en el parámetro de la petición)
+2.2) Tiene un atributo buyUrl que será al que redireccione la app cuando pulses en comprar
+2.3) Tiene un atributo 'price', que será el que se muestra en el wireframe (denotado como €€€)
+2.4) d_date y r_date ahora están contemplados en ISO 8601 (e.g.: 2021/10/23T10:10) en vez de formato europeo (23/10/2023) dado que también es necesario mostrar la hora
+2.5) Devuelve un 'id' (cuando le damos a "Comprar", además de abrir la buyUrl, tenemos que mandar un PUT para notificar al servidor de que añada dicho vuelo al perfil del usuario)
+
+- GET special offers
+
+en el cuerpo de la respuesta, en vez de "date", "arrival_time" y "departure_time", se ha cambiado a "arrival_datetime" y "departure_datetime" (en ISO 8601 e.g.: 2021/10/23T10:10) para que no haya problemas si la fecha de salida y de destino no coinciden; es decir, el vuelo llega un día distinto al día de salida
+
+para cada vuelo, también se devuelve un 'id' (cuando le damos a "Comprar", además de abrir la buyUrl, tenemos que mandar un PUT para notificar al servidor de que añada dicho vuelo al perfil del usuario)
+
+- GET cuenta
+
+ahora en las cabeceras HTTP está especificado un parámetro SessionToken (ojo a las mayúsculas). Identifica y autentica al usuario. Si no va en la petición es cuando se da el 401
+
+- DELETE cuenta (eliminar cuenta)
+
+ahora en las cabeceras HTTP está especificado un parámetro SessionToken (ojo a las mayúsculas). Identifica y autentica al usuario. Si no va en la petición es cuando se da el 401
+
+- PUT cuenta (actualizar perfil)
+
+ahora en las cabeceras HTTP está especificado un parámetro SessionToken (ojo a las mayúsculas). Identifica y autentica al usuario. Si no va en la petición es cuando se da el 401
+
+los parámetros country y birthdate ya no se pueden enviar (eliminados); ya que en el wireframe no hay un campo editable para modificarlos
+
+parámetros name, email, password, image -> pasan al requestBody
+(normalmente no se envían en la URL/query datos sensibles como contraseñas. La URL puede ser logueada por algún subsistema)
+
+cada atributo del cuerpo de la petición será opcional. Si no se envía en la petición, significa que el usuario no cubrió ese campo y por tanto no lo quiere modificar
+
+atributo image -> se especifica que se enviará en un string base64. Veremos en clase cómo hacerlo
+
+- GET cuenta vuelos
+
+ahora en las cabeceras HTTP está especificado un parámetro SessionToken (ojo a las mayúsculas). Identifica y autentica al usuario. Si no va en la petición es cuando se da el 401
+
+mismos cambios que en ofertas especiales con respecto a fechas y horas
+
+NOTA: se entiende que esta petición también habrá que mandarla desde la pantalla de avisos para saber las fechas de los vuelos y calcular desde la app los posibles avisos como "tu vuelo sale en 1 hora" (ojo, esto estaría mejor implementado como lógica de servidor)
+
+- PUT vuelo
+
+ahora en las cabeceras HTTP está especificado un parámetro SessionToken (ojo a las mayúsculas). Identifica y autentica al usuario. Si no va en la petición es cuando se da el 401
+
+el ID (código) del vuelo que se está añadiendo viaja ahora en el path:
+/user/flights -> /user/flights/{id}
+
+- DELETE vuelo
+
+ahora en las cabeceras HTTP está especificado un parámetro SessionToken (ojo a las mayúsculas). Identifica y autentica al usuario. Si no va en la petición es cuando se da el 401
+
+el ID (código) del vuelo que se está añadiendo viaja ahora en el path:
+/user/flights -> /user/flights/{id}
+
+
+Wireframes:
+----------------------------------------------------------
+
+Pantalla resultados de búsqueda: En caso de que la fecha de salida y la fecha de llegada no coincidan (e.g.: El vuelo tarda más de un día) habrá que pintar las dos fechas por separado
+
+Pantalla ofertas especiales: En caso de que la fecha de salida y la fecha de llegada no coincidan (e.g.: El vuelo tarda más de un día) habrá que pintar las dos fechas por separado
+
+Pantalla mis vuelos: En caso de que la fecha de salida y la fecha de llegada no coincidan (e.g.: El vuelo tarda más de un día) habrá que pintar las dos fechas por separado

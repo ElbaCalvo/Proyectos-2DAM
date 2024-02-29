@@ -1,0 +1,484 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        tools:context=".ui.GoTo.GoTo">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/box"
+            android:layout_width="350dp"
+            android:layout_height="500dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/border"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <!-- Origen y destino. + Los spinner que son para seleccionar la ciudad deseada. -->
+
+            <TextView
+                android:id="@+id/text_origin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="185dp"
+                android:text="Origen"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="17sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/text_destination"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="125dp"
+                android:text="Destino"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="17sp"
+                app:layout_constraintStart_toEndOf="@id/text_origin"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Spinner
+                android:id="@+id/spinner_origin"
+                android:layout_width="110dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="180dp"
+                android:background="@drawable/spinner_background"
+                android:spinnerMode="dropdown"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/text_origin" />
+
+            <Button
+                android:id="@+id/change_origin_and_destination"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="20dp"
+                android:background="@drawable/flechas"
+                app:backgroundTint="@color/black"
+                app:layout_constraintBottom_toBottomOf="@id/spinner_origin"
+                app:layout_constraintStart_toEndOf="@id/spinner_origin"
+                app:layout_constraintTop_toTopOf="@id/spinner_origin" />
+
+            <Spinner
+                android:id="@+id/spinner_destination"
+                android:layout_width="110dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="190dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/spinner_background"
+                android:spinnerMode="dropdown"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/text_origin" />
+
+
+            <!-- Separador -->
+
+            <LinearLayout
+                android:id="@+id/separator1"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="100dp"
+
+                android:orientation="vertical"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/black"
+                    android:gravity="center_horizontal"
+                    android:text="...."
+                    android:textSize="1sp" />
+
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/black" />
+            </LinearLayout>
+
+
+            <!-- Fecha de vuelo -->
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="20dp"
+                android:src="@drawable/calendarioicono"
+                app:layout_constraintBottom_toBottomOf="@id/go_to_date"
+                app:layout_constraintStart_toEndOf="@id/go_to_date"
+                app:layout_constraintTop_toTopOf="@id/go_to_date" />
+
+            <TextView
+                android:id="@+id/text_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="110dp"
+                android:text="Fecha ida"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="17sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/go_to_date"
+                android:layout_width="130dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/border2"
+                android:focusable="false"
+                android:hint="2000-08-06"
+                android:textAlignment="center"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_date" />
+
+
+            <!-- Separador -->
+
+            <LinearLayout
+                android:id="@+id/separator2"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="205dp"
+                android:orientation="vertical"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/black"
+                    android:gravity="center_horizontal"
+                    android:text="...."
+                    android:textSize="1sp" />
+
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/black" />
+            </LinearLayout>
+
+
+            <!-- Tipo de pasajero -->
+
+            <TextView
+                android:id="@+id/text_passengers"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="220dp"
+                android:text="@string/passengers"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/text_adults"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="9dp"
+                android:layout_marginEnd="90dp"
+                android:text="Adultos"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/text_passengers" />
+
+
+            <!-- Botones para añadir el número de billetes -->
+
+            <Button
+                android:id="@+id/buttonA1"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="140dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/minus"
+                app:backgroundTint="@color/black"
+                app:layout_constraintBottom_toBottomOf="@id/text_adults"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/text_adults" />
+
+            <Button
+                android:id="@+id/buttonK1"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="140dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/minus"
+                app:backgroundTint="@color/black"
+                app:layout_constraintBottom_toBottomOf="@id/text_kids"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/text_kids" />
+
+            <Button
+                android:id="@+id/buttonB1"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="140dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/minus"
+                app:backgroundTint="@color/black"
+                app:layout_constraintBottom_toBottomOf="@id/text_babies"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/text_babies" />
+
+            <Button
+                android:id="@+id/buttonA2"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="260dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/plus"
+                app:backgroundTint="@color/black"
+                app:layout_constraintBottom_toBottomOf="@id/text_adults"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/text_adults" />
+
+            <Button
+                android:id="@+id/buttonK2"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="260dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/plus"
+                app:backgroundTint="@color/black"
+                app:layout_constraintBottom_toBottomOf="@id/text_kids"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/text_kids" />
+
+            <Button
+                android:id="@+id/buttonB2"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="260dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/plus"
+                app:backgroundTint="@color/black"
+                app:layout_constraintBottom_toBottomOf="@id/text_babies"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/text_babies" />
+
+
+            <!-- Cantidad de billetes -->
+
+            <TextView
+                android:id="@+id/adult_ticket"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="200dp"
+                android:layout_marginTop="15dp"
+                android:text="0"
+                android:textColor="@color/black"
+                android:textSize="17sp"
+                app:layout_constraintBottom_toBottomOf="@id/text_adults"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/text_adults" />
+
+            <TextView
+                android:id="@+id/kid_ticket"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="200dp"
+                android:layout_marginTop="15dp"
+                android:text="0"
+                android:textColor="@color/black"
+                android:textSize="17sp"
+                app:layout_constraintBottom_toBottomOf="@id/text_kids"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/text_kids" />
+
+            <TextView
+                android:id="@+id/baby_ticket"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="200dp"
+                android:layout_marginTop="15dp"
+                android:text="0"
+                android:textColor="@color/black"
+                android:textSize="17sp"
+                app:layout_constraintBottom_toBottomOf="@id/text_babies"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/text_babies" />
+
+            <!-- Textos de tipo de pasajero -->
+
+            <TextView
+                android:id="@+id/text_adultsD"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="90dp"
+                android:text="Desde 16 años"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/text_adults" />
+
+            <TextView
+                android:id="@+id/text_kids"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="90dp"
+                android:text="Niños"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/text_adultsD" />
+
+            <TextView
+                android:id="@+id/text_kidsD"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="90dp"
+                android:text="2 - 15 años"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/text_kids" />
+
+            <TextView
+                android:id="@+id/text_babies"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="90dp"
+                android:text="Bebés"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/text_kidsD" />
+
+            <TextView
+                android:id="@+id/text_babiesD"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="90dp"
+                android:text="7 días - 23 meses"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/text_babies" />
+
+
+            <!-- Botón para finalizar la búsqueda -->
+
+            <Button
+                android:id="@+id/button_search"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="150dp"
+                android:backgroundTint="@color/white"
+                android:padding="10dp"
+                android:text="Buscar"
+                android:textColor="@color/black"
+                app:cornerRadius="0dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/text_passengers"
+                app:strokeColor="@color/black"
+                app:strokeWidth="3dp" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <ProgressBar
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:id="@+id/loadingScreen"
+            android:visibility="invisible"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <Button
+            android:id="@+id/button_go_to"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="60dp"
+            android:padding="10dp"
+            android:text="@string/goTo"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:backgroundTint="@color/pink"
+            app:cornerRadius="0dp"
+            app:layout_constraintBottom_toTopOf="@id/box"
+            app:layout_constraintStart_toStartOf="@id/box"
+            app:strokeColor="@color/black"
+            app:strokeWidth="2dp" />
+
+        <Button
+            android:id="@+id/button_round_trip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="@string/roundTrip"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:backgroundTint="@color/pink"
+            app:cornerRadius="0dp"
+            app:layout_constraintBottom_toTopOf="@id/box"
+            app:layout_constraintStart_toEndOf="@id/button_go_to"
+            app:strokeColor="@color/black"
+            app:strokeWidth="2dp" />
+
+        <TextView
+            android:id="@+id/text_home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-light"
+            android:text="@string/where_to_fly"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@id/button_go_to"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</ScrollView>

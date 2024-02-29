@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/info_title_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Información"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="40dp"/>
+
+    <View
+        android:id="@+id/line"
+        android:layout_width="335dp"
+        android:layout_height="2dp"
+        android:background="@android:color/black"
+        app:layout_constraintStart_toStartOf="@+id/info_title_label"
+        app:layout_constraintTop_toBottomOf="@+id/info_title_label"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="15dp"/>
+
+    <ImageView
+        android:id="@+id/img_maletas"
+        android:layout_width="150dp"
+        android:layout_height="125dp"
+        android:src="@drawable/maletas"
+        app:layout_constraintTop_toBottomOf="@+id/line"
+        app:layout_constraintStart_toStartOf="@+id/line"
+        android:layout_marginTop="20dp"/>
+
+    <TextView
+        android:id="@+id/info_label1"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Normalmenta la reglamentación de los tamaños de las maletas por lo general suele ser:"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/line"
+        app:layout_constraintTop_toBottomOf="@+id/line" />
+
+    <TextView
+        android:id="@+id/info_label2"
+        android:layout_width="330dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="De forma gratuita un maletín o bolso pequeño que quepa bajo el asiento de delante (40cm x 20cm x 25cm). Si necesitas una maleta de mano, deberás contratar otro servicio dependiendo de la aerolinea en la que se viaje, con lo cual podrás subir a cabina tu equipaje de mano de 55cm x 40cm x 23cm y un máximo de 10kg."
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/line"
+        app:layout_constraintTop_toBottomOf="@+id/img_maletas" />
+
+    <ImageView
+        android:id="@+id/img_objetos"
+        android:layout_width="150dp"
+        android:layout_height="110dp"
+        android:src="@drawable/objetos"
+        app:layout_constraintTop_toBottomOf="@+id/info_label2"
+        app:layout_constraintEnd_toEndOf="@+id/line"
+        android:layout_marginEnd="10dp" />
+
+    <TextView
+        android:id="@+id/info_label3"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Revisa que no llevas artículos prohibidos o restringidos en el equipaje de mano."
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/img_objetos"
+        app:layout_constraintTop_toBottomOf="@+id/info_label2" />
+
+    <TextView
+        android:id="@+id/info_label4"
+        android:layout_width="330dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:text="Como método de prevención y seguridad, existen objetos que pueden ser llevados si se cumplen determinados requisitos, así como otros que están prohibidos."
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/info_label3"
+        app:layout_constraintTop_toBottomOf="@+id/info_label3" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

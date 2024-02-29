@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:usesCleartextTraffic="true"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@drawable/airpeeksombra"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/airpeeksombra"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AirPeek"
+        tools:targetApi="31">
+        <activity
+            android:name=".RegisterActivity"
+            android:exported="false"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name=".EditProfileActivity"
+            android:exported="true">
+        </activity>
+        <activity
+            android:name=".LoginActivity"
+            android:exported="true"
+            android:theme="@style/AppTheme.NoActionBar">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.specialoffers.SpecialOffersFragment"
+            android:exported="true"
+            android:label="@string/app_name">
+        </activity>
+
+        <activity
+            android:name=".ui.specialoffers.SpecialOffersViewHolder"
+            android:exported="true" >
+        </activity>
+
+        <activity
+            android:name=".ui.specialoffers.SpecialOffersData"
+            android:exported="false" />
+        <activity
+            android:name=".ui.user_flights.FragmentUserFlights"
+            android:exported="false" />
+        <activity
+            android:name=".ui.specialoffers.SpecialOffersAdapter"
+            android:exported="false" />
+        <activity android:name=".InfoActivity"
+            android:label="@string/app_name"/>
+        <activity
+            android:name=".ui.serchresults.SerchResultsActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="false"
+            android:label="@string/app_name"/>
+    </application>
+</manifest>

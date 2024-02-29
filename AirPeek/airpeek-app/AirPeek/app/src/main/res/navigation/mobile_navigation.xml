@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_search_flights">
+
+
+    <!-- La función de este .xml es servir de puente entre el Navigation y los fragmentos de la app.
+    En este caso, para movernos entre fragmentos, llamaríamos al Navigation para que nos moviera
+    entre estos.-->
+
+    <fragment
+        android:id="@+id/navigation_search_flights"
+        android:name="com.example.airpeek.ui.GoTo.SearchFlight"
+        android:label="AirPeek"
+        tools:layout="@layout/fragment_search_flight" />
+
+    <fragment
+        android:id="@+id/navigation_special_offers"
+        android:name="com.example.airpeek.ui.specialoffers.SpecialOffersFragment"
+        android:label="AirPeek"
+        tools:layout="@layout/fragment_special_offers" />
+
+    <fragment
+        android:id="@+id/navigation_profile"
+        android:name="com.example.airpeek.ui.profile.ProfileFragment"
+        android:label="@string/title_profile"
+        tools:layout="@layout/fragment_profile" />
+
+    <fragment
+        android:id="@+id/navigation_notifications"
+        android:name="com.example.airpeek.ui.notifications.NotificationFragment"
+        android:label="@string/title_notifications"
+        tools:layout="@layout/fragment_notifications" />
+
+    <fragment
+        android:id="@+id/navigation_user_flights"
+        android:name="com.example.airpeek.ui.user_flights.FragmentUserFlights"
+        android:label="@string/title_user_flights"
+        tools:layout="@layout/fragment_user_flights" />
+
+</navigation>

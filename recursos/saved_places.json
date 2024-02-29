@@ -1,0 +1,37 @@
+[
+  {
+      "place_name": "Café El Escondite",
+      "description": "Encantadora cafetería en el Barrio de las Ciencias. Ofrece una amplia variedad de cafés artesanales y pasteles caseros.",
+      "tag": "Cafetería",
+      "location": "43.368200, -8.395100",
+      "image_url": "https://raw.githubusercontent.com/Bl4nc018/Proyectos-2-trimestre/main/recursos/cafe_el_escondite.jpg"
+    },
+    {
+      "place_name": "La Encrucijada",
+      "description": "Pequeña tienda de ropa vintage en la Calle Real. Ofrece prendas únicas y accesorios con encanto del pasado.",
+      "tag": "Tienda con encanto",
+      "location": "43.370500, -8.395800",
+      "image_url": "https://raw.githubusercontent.com/Bl4nc018/Proyectos-2-trimestre/main/recursos/boutique_vintage_la_encrucijada.jpg"
+    },
+    {
+      "place_name": "Parque San Pedro",
+      "description": "Un hermoso parque en el centro de la ciudad con senderos arbolados y zonas de descanso. Ideal para relajarse y disfrutar de la naturaleza.",
+      "tag": "Parque",
+      "location": "43.368900, -8.402600",
+      "image_url": "https://raw.githubusercontent.com/Bl4nc018/Proyectos-2-trimestre/main/recursos/parque_san_pedro.jpg"
+    },
+    {
+      "place_name": "Librería Cervantes",
+      "description": "Una de las librerías más antiguas de A Coruña, ubicada en la Plaza de María Pita. Ofrece una amplia selección de libros y eventos literarios.",
+      "tag": "Librería",
+      "location": "43.371800, -8.395000",
+      "image_url": "https://raw.githubusercontent.com/Bl4nc018/Proyectos-2-trimestre/main/recursos/libreria_cervantes.jpg"
+    },
+    {
+      "place_name": "Galería de Arte",
+      "description": "Espacio dedicado a exhibir obras de artistas locales en el Barrio de las Artes. Un lugar acogedor para disfrutar del arte contemporáneo.",
+      "tag": "Galería de Arte",
+      "location": "43.370000, -8.409000",
+      "image_url": "https://raw.githubusercontent.com/Bl4nc018/Proyectos-2-trimestre/main/recursos/galeria_arte_oleo_y_pincel.jpg"
+    }
+]

@@ -1,0 +1,27 @@
+[
+  {
+    "flight_id": "ER333",
+    "departure_datetime": "2024-01-29T12:10:00",
+    "arrival_datetime": "2024-01-29T16:40:00"
+},
+{
+  "flight_id": "FL111",
+  "departure_datetime": "2024-01-29T10:40:00",
+  "arrival_datetime": "2024-01-29T10:58:00"
+},
+{
+  "flight_id": "FL1E1",
+  "departure_datetime": "2024-02-15T09:00:00",
+  "arrival_datetime": "2024-02-15T11:40:00"
+},
+{
+  "flight_id": "FL643",
+  "departure_datetime": "2022-03-22T09:39:00",
+  "arrival_datetime": "2022-03-22T11:35:00"
+},
+{
+  "flight_id": "FL553",
+  "departure_datetime": "2022-03-22T09:35:00",
+  "arrival_datetime": "2022-03-22T11:35:00"
+}
+]

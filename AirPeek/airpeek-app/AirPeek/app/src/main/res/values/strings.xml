@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">AirPeek</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_profile">Perfil</string>
+    <string name="title_user_flights">Tus Vuelos</string>
+    <string name="name_field">Nombre y Apellidos:</string>
+    <string name="birthdate_field">Fecha de Nacimiento:</string>
+    <string name="password_field">Contraseña:</string>
+    <string name="email_field">Email:</string>
+    <string name="country_field">Pais:</string>
+    <string name="where_to_fly"><u><b><i>¿A dónde quieres viajar?</i></b></u></string>
+    <string name="goTo"><u><b><i>Ida</i></b></u></string>
+    <string name="roundTrip"><u><b><i>Ida y vuelta</i></b></u></string>
+    <string name="passengers"><u><b>Pasajeros</b></u></string>
+    <string name="info"><u><b>Información</b></u></string>
+
+    <!--Para el menú desplegable de origen y destinos. -->
+
+</resources>

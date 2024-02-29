@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "449701542769",
+    "firebase_url": "https://cornerfinderapp-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "cornerfinderapp",
+    "storage_bucket": "cornerfinderapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:449701542769:android:dcccd82157d5df1e6494d0",
+        "android_client_info": {
+          "package_name": "com.example.cornerfinder"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB1hAtnqQblPbTT9Wr3J5yhce243xv_lNM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

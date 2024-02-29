@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/generalMap"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+
+    <!-- Fragmento para que aparezca el mapa general.-->
+
+    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MapsActivity" />
+
+
+    <!-- Botón para que aparezca el siguiente. -->
+
+    <Button
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="320dp"
+        android:layout_marginTop="630dp"
+        android:id="@+id/addButton"
+        android:text="+"
+        android:textSize="25sp"
+        android:gravity="center"
+        android:background="@drawable/circle"
+        app:backgroundTint="#ffe599"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+
+    <!-- Botón configurado para que aparezca una vez se clica el anterior,
+    sirve para añadir donde nos encontremos actualmente al mapa, osease, que nos llevará
+    al activity correspondiente.-->
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:layout_marginStart="150dp"
+        android:id="@+id/addButton2"
+        android:text="Añadir este lugar"
+        android:textSize="13sp"
+        android:gravity="center"
+        android:visibility="invisible"
+        android:textColor="@color/black"
+        app:backgroundTint="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/addButton"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

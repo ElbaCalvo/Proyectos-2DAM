@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_hotspots">
+    <!-- .xml creado para poder navegar entre fragmentos, los cuales recogen los respectivos
+     layouts y ubicaciones de los mismos para poder llamarlos.-->
+
+    <fragment
+        android:id="@+id/nav_hotspots"
+        android:name="com.example.cornerfinder.ui.hotspots.HotspotsFragment"
+        android:label="@string/menu_hotspots"
+        tools:layout="@layout/fragment_recycler" />
+    <fragment
+        android:id="@+id/nav_edit_preferences"
+        android:name="com.example.cornerfinder.ui.editpreferences.EditPreferencesFragment"
+        android:label="@string/menu_edit_preferences"
+        tools:layout="@layout/fragment_edit_preferences" />
+
+    <fragment
+        android:id="@+id/nav_summermode"
+        android:name="com.example.cornerfinder.summermode.SummerModeFragment"
+        android:label="Modo Verano"
+        tools:layout="@layout/fragment_recycler"/>
+
+    <fragment
+        android:id="@+id/nav_generalmap"
+        android:name="com.example.cornerfinder.generalmap.GeneralMapFragment"
+        android:label="Mapa General"
+        tools:layout="@layout/fragment_generalmap"/>
+
+    <fragment
+        android:name="com.example.cornerfinder.AddlocationFragment"
+        android:id="@+id/nav_addlocation"
+        android:label="Add location"
+        tools:layout="@layout/fragment_addlocation"/>
+
+    <fragment
+        android:name="com.example.cornerfinder.routes.Routes"
+        android:id="@+id/nav_routes"
+        android:label="Routes"
+        tools:layout="@layout/fragment_routes" />
+
+    <fragment
+        android:id="@+id/nav_account"
+        android:name="com.example.cornerfinder.ui.account.AccountFragment"
+        android:label="@string/menu_account"
+        tools:layout="@layout/fragment_account" />
+</navigation>

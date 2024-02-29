@@ -1,0 +1,34 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> main
+>>>>>>> main
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectMigrations">
+    <option name="MigrateToGradleLocalJavaHome">
+      <set>
+        <option value="$PROJECT_DIR$" />
+      </set>
+    </option>
+  </component>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+=======
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectMigrations">
+    <option name="MigrateToGradleLocalJavaHome">
+      <set>
+        <option value="$PROJECT_DIR$" />
+      </set>
+    </option>
+  </component>
+>>>>>>> fd3e18c3fe0c68d4df8ce0f8add7ea24a23deca9
+>>>>>>> main
+>>>>>>> main
+</project>

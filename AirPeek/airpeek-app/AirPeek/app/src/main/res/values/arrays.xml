@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="country_array">
+        <item>Spain</item>
+        <item>Afghanistan</item>
+        <item>Albania</item>
+        <item>Angola</item>
+        <item>Argentina</item>
+        <item>Armenia</item>
+        <item>Australia</item>
+        <item>Austria</item>
+        <item>Azerbaijan</item>
+        <item>Bahamas</item>
+        <item>Bahrain</item>
+        <item>Bangladesh</item>
+        <item>Barbados</item>
+        <item>Belarus</item>
+        <item>Belgium</item>
+        <item>Belize</item>
+        <item>Benin</item>
+        <item>Bhutan</item>
+        <item>Bolivia</item>
+        <item>Bosnia and Herzegovina</item>
+        <item>Botswana</item>
+        <item>Brazil</item>
+        <item>Brunei</item>
+        <item>Bulgaria</item>
+        <item>Burkina Faso</item>
+        <item>Burundi</item>
+        <item>Cambodia</item>
+        <item>Cameroon</item>
+        <item>Canada</item>
+        <item>Cape Verde</item>
+        <item>Central African Republic</item>
+        <item>Chad</item>
+        <item>Chile</item>
+        <item>China</item>
+        <item>Colombia</item>
+        <item>Comoros</item>
+        <item>Costa Rica</item>
+        <item>Croatia</item>
+        <item>Cuba</item>
+        <item>Cyprus</item>
+        <item>Czech Republic</item>
+        <item>Denmark</item>
+        <item>Djibouti</item>
+        <item>Dominica</item>
+        <item>Dominican Republic</item>
+        <item>Ecuador</item>
+        <item>Egypt</item>
+        <item>El Salvador</item>
+    </string-array>
+    <string-array name="origin_and_destination">
+        <item>Dallas</item>
+        <item>Dubai</item>
+        <item>Estambul</item>
+        <item>Londres</item>
+        <item>Delhi</item>
+        <item>Mumbai</item>
+        <item>París</item>
+        <item>Nueva York</item>
+        <item>Las Vegas</item>
+        <item>Ámsterdam</item>
+        <item>Miami</item>
+        <item>Madrid</item>
+        <item>Tokyo</item>
+        <item>Frankfurt</item>
+        <item>Ciudad de México</item>
+        <item>Barcelona</item>
+        <item>Jakarta</item>
+        <item>Atlanta</item>
+        <item>Chek Lap Kok</item>
+        <item>Inchon</item>
+        <item>Taoyuan</item>
+        <item>Doha</item>
+        <item>Bogotá</item>
+        <item>São Paulo</item>
+        <item>Saigón</item>
+        <item>Changi</item>
+        <item>Yidda</item>
+        <item>Múnich</item>
+        <item>Manila</item>
+        <item>Jeju</item>
+        <item>Roma</item>
+        <item>Sydney</item>
+        <item>Cantón</item>
+        <item>Sichuan</item>
+        <item>Shenzhen</item>
+        <item>Chongqing</item>
+        <item>Shanghai</item>
+        <item>Pekín</item>
+        <item>Yunnan</item>
+        <item>Pudong</item>
+        <item>Moscú</item>
+        <item>Cancún</item>
+    </string-array>
+</resources>

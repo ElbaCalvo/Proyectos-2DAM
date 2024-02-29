@@ -1,0 +1,469 @@
+openapi: "3.0.0"
+info:
+  version: 1.1.0
+  title: AirPeekAPI
+  description: Esta api sirve para controlar tanto los usuarios de Airpeek como los vuelos.
+servers:
+  - url: http://localhost:8000
+tags:
+  - name: User
+    description: User actions 
+  - name: Flights
+    description: Flights info
+paths:
+  /user/session:
+    post:
+      tags:
+        - User
+      summary: Logs user into the system
+      operationId: loginUser
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LoginBody'
+      security:
+        - bearerAuth: []
+      responses:
+        201:
+          $ref: '#/components/responses/LoginOk'
+        400:
+          $ref: '#/components/responses/ClientError'
+        401:
+          $ref: '#/components/responses/Unauthorized'
+  /user:
+    post:
+      tags:
+        - User
+      summary: Registers a new user
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RegisterBody'
+      responses:
+        201:
+          $ref: '#/components/responses/Ok'
+        400:
+          $ref: '#/components/responses/ClientError'
+        409:
+          $ref: '#/components/responses/Conflict'
+    get:
+      tags:
+        - User
+      summary: Get user profile
+      parameters:
+        - name: SessionToken
+          schema:
+            type: string
+          in: header
+          required: true
+          description: The sessionToken returned by the login request
+      security:
+        - bearerAuth: []
+      responses:
+        200:
+          description: User profile received.
+          content:
+            application/json:    
+              schema:
+                $ref: '#/components/schemas/User'
+        401:
+          $ref: '#/components/responses/Unauthorized'
+    put:
+      tags:
+        - User
+      summary: Update user profile
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: SessionToken
+          schema:
+            type: string
+          in: header
+          required: true
+          description: The sessionToken returned by the login request
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateProfileBody'
+      responses:
+        200:
+          $ref: '#/components/responses/Ok'
+        400:
+          $ref: '#/components/responses/ClientError'
+        401:
+          $ref: '#/components/responses/Unauthorized'
+        409:
+          $ref: '#/components/responses/Conflict'
+    delete:
+      tags:
+        - User
+      summary: Delete user account
+      parameters:
+        - name: SessionToken
+          schema:
+            type: string
+          in: header
+          required: true
+          description: The sessionToken returned by the login request
+      security:
+        - bearerAuth: []
+      responses:
+        200:
+          $ref: '#/components/responses/Ok'
+        500:
+          $ref: '#/components/responses/ServerError'
+        401:
+          $ref: '#/components/responses/Unauthorized'
+  /user/flights:
+    get:
+      tags:
+        - User
+      summary: Get all flights added to user
+      description: Returns a list of all flights
+      parameters:
+        - name: SessionToken
+          schema:
+            type: string
+          in: header
+          required: true
+          description: The sessionToken returned by the login request
+      security:
+        - bearerAuth: []
+      responses:
+        200:
+          description: A list of flights
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Flights'
+        404:
+          $ref: '#/components/responses/BadRequest'
+        401:
+          $ref: '#/components/responses/Unauthorized'
+  /user/flights/{id}:  
+    put:
+      tags:
+        - User
+      summary: Add a flight ticket to user flights
+      description: Post a flight ticket to user flights
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: SessionToken
+          schema:
+            type: string
+          in: header
+          required: true
+          description: The sessionToken returned by the login request
+        - name: id
+          in: path
+          required: true
+          description: Flight code
+          schema:
+            type: string
+            example: "BY2940"
+      responses:
+        201:
+          $ref: '#/components/responses/Ok'
+        500:
+          $ref: '#/components/responses/ServerError'
+        401:
+          $ref: '#/components/responses/Unauthorized'
+    delete:
+      tags:
+        - User
+      summary: Deletes a flight
+      parameters:
+        - name: SessionToken
+          schema:
+            type: string
+          in: header
+          required: true
+          description: The sessionToken returned by the login request
+        - name: id
+          in: path
+          required: true
+          description: Flight code
+          schema:
+            type: string
+            example: "BY2940"
+      description: Deletes a flight from user's flights
+      security:
+        - bearerAuth: []
+      responses:
+        200:
+          $ref: '#/components/responses/Ok'
+        500:
+          $ref: '#/components/responses/ServerError'
+        401:
+          $ref: '#/components/responses/Unauthorized'
+  /flights:
+    get:
+      tags:
+        - Flights
+      summary: Returns searched flights
+      parameters:
+        - name: origin
+          in: query
+          required: true
+          description: Where the flight should depart from
+          schema:
+            type: string
+            example: "LPA"
+        - name: destination
+          in: query
+          required: true
+          description: Where the flight should arrive at
+          schema:
+            type: string
+          example: "AOK"
+        - name: d_date
+          in: query
+          required: true
+          description: The departure date
+          schema:
+            type: string
+            example: "24/03/2001"
+        - name: r_date
+          in: query
+          required: false
+          description: The return date. If omitted, only a single flight will be searched. Otherwise, the search is bidirectional
+          schema:
+            type: string
+          example: "27/03/2001"
+        - name: adults
+          in: query
+          required: true
+          description: The number of adults
+          schema:
+            type: integer
+        # the following two may or may not actually do anything more than increasing the number of adults
+        - name: children
+          in: query
+          required: true
+          description: The number of children
+          schema:
+            type: integer
+        - name: toddlers
+          in: query
+          required: true
+          description: The number of toddlers
+          schema:
+            type: integer
+      responses:
+          200:
+            description: Successful retrieval of flights
+            content:
+              application/json:    
+                schema:
+                  $ref: '#/components/schemas/SearchFlights'
+          400:
+            $ref: '#/components/responses/ClientError'
+          404:
+            $ref: '#/components/responses/BadRequest'
+          500:
+            $ref: '#/components/responses/ServerError'
+  /special_offers:
+    get:
+      tags:
+        - Flights
+      summary: Get special offers which can interest the user
+      description: Returns a list of some special flight offers that stand out for being affordable
+      responses:
+        200:
+          description: A list of special offers
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Flights'
+        404:
+          $ref: '#/components/responses/BadRequest'
+components:
+  responses:
+    ClientError:
+      description: Something went wrong (Client Error)
+      content:
+        application/json:    
+          schema:
+            example:
+              response: not_ok
+    ServerError:
+      description: Something went wrong (Server Error)
+      content:
+        application/json:    
+          schema:
+            example:
+              response: not_ok
+    BadRequest:
+      description: Offer not found.
+      content:
+        application/json:    
+          schema:
+            example:
+              response: not_ok
+    Unauthorized:
+      description: Unauthorized
+      content:
+        application/json:    
+          schema:
+            example:
+              response: Unauthorized
+    Conflict:
+      description: Conflict on the server.
+      content:
+        application/json:
+          schema:
+            example:
+              response: already_exist
+    Ok:
+      description: Ok
+      content:
+        application/json:
+          schema:
+            example:
+              response: ok
+    LoginOk:
+      description: Ok
+      content:
+        application/json:
+          schema:
+            example:
+              response: ok
+              sessionToken: asdjbfsduifhsdf
+  schemas:
+    LoginBody:
+      type: object
+      properties:
+        email:
+          type: string
+        password:
+          type: string
+    UpdateProfileBody:
+      type: object
+      properties:
+        name:
+          type: string
+          description: full name of the user
+        email:
+          type: string
+        password:
+          type: string
+        image:
+          type: string
+          description: the base64 encoded profile picture
+    RegisterBody:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Full name of the user
+        email:
+          type: string
+        country:
+          type: string
+          description: The user's home country
+          example: España
+        password:
+          type: string
+        birthdate:
+          type: string
+          format: date
+          example: "24/03/2001"
+    User:
+      type: object
+      properties:
+        image:
+          type: string
+          format: binary
+        name:
+          type: string
+        email:
+          type: string
+        country:
+          type: string
+        birthdate:
+          type: string
+    Flight:
+      type: object
+      properties:
+        id:
+          type: string
+          example: "BY2940"
+        arrival_datetime:
+          type: string
+          description: The date and time of arrival, in ISO 8601
+          example: 2021/10/21T08:23
+        departure_datetime:
+          type: string
+          description: The date and time of return, in ISO 8601
+          example: 2021/10/23T10:10
+        departure_location: 
+          type: string
+        arrival_location: 
+          type: string
+        price: 
+          type: integer
+        buyUrl:
+          type: string
+    Flights:
+      type: array
+      items:
+        $ref: '#/components/schemas/Flight'
+    SearchFlight:
+        type: object
+        required:
+        - origin
+        - destination
+        - d_date
+        - adults
+        - children
+        - toddlers
+        - buyUrl
+        - price
+        properties:
+          id:
+            type: string
+            example: "BY2940"
+          origin:
+            type: string
+            example: A Coruña
+          destination:
+            type: string
+            example: Berlín
+          d_date:
+            type: string
+            description: The date and time of arrival, in ISO 8601
+            example: 2021/10/21T08:23
+          r_date:
+            type: string
+            description: The date and time of return, in ISO 8601
+            example: 2021/10/23T10:10
+          adults:
+            type: integer
+          children:
+            type: integer
+          toddlers:
+            type: integer
+          buyUrl:
+            type: string
+            format: url
+          price:
+            type: number
+            description: Price in €€€
+            example: 246.89
+    SearchFlights:
+      type: object
+      properties:
+        cheapest:
+          type: array
+          items:
+            $ref: '#/components/schemas/Flight'
+        fastest:
+          type: array
+          items:
+            $ref: '#/components/schemas/Flight'
+    
+

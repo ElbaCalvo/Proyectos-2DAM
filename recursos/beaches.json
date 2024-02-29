@@ -1,0 +1,37 @@
+[
+  {
+    "place_name": "Playa das Lapas",
+    "description": "Se encuentra al pie de la Torre de Hércules, que es el faro más antiguo del mundo y desde donde se puede ver la playa. Mide 70 metros y tiene una anchura de 30 metros. Su arena es una mezcla de fina y gruesa.",
+    "tag": "Playa",
+    "location": "43.383636, -8.405864",
+    "image_url": "https://raw.githubusercontent.com/Bl4nc018/Proyectos-2-trimestre/main/recursos/asLapas.jpg"
+  },
+  {
+    "place_name": "Playa de Matadero",
+    "description": "Ubicada al norte de la playa del Orzán. Tiene una longitud de 80 metros. Su arena es fina y blanca.",
+    "tag": "Playa",
+    "location": "43.375622, -8.403764",
+    "image_url": "https://raw.githubusercontent.com/Bl4nc018/Proyectos-2-trimestre/main/recursos/deMatadero.jpg"
+  },
+  {
+    "place_name": "Playa do Orzán",
+    "description": "Está situada en la Ensenada del Orzán. Su continuación hacia el suroeste es la playa de Riazor. Posee una longitud de 780 metros. Su arena es gruesa.",
+    "tag": "Playa",
+    "location": "43.3699, -8.40618",
+    "image_url": "https://raw.githubusercontent.com/Bl4nc018/Proyectos-2-trimestre/main/recursos/orzan.jpg"
+  },
+  {
+    "place_name": "Playa de Oza",
+    "description": "Está posicionada en el barrio de Oza, resguardada del viento del océano Atlántico y de las olas. Es de una longitud de 100 metros y su arena es fina.",
+    "tag": "Playa",
+    "location": "43.346942, -8.383356",
+    "image_url": "https://raw.githubusercontent.com/Bl4nc018/Proyectos-2-trimestre/main/recursos/oza.jpg"
+  },
+  {
+    "place_name": "Playa de Riazor",
+    "description": "También ubicada en la Ensenada del Orzán, está en frente del hotel Riazor. Su longitud es de 610 metros y de arena gruesa. Es una playa céntrica y muy concurrida.",
+    "tag": "Playa",
+    "location": "43.3686, -8.4113",
+    "image_url": "https://raw.githubusercontent.com/Bl4nc018/Proyectos-2-trimestre/main/recursos/riazor.jpg"
+  },
+]

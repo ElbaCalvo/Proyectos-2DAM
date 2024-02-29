@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.profile.ProfileFragment">
+
+    <ProgressBar
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:id="@+id/loadingScreen"
+        android:visibility="invisible"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/profile_picture"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="15dp"
+        android:src="@drawable/profile_picture"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.150"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/ImageView.Circle" />
+
+    <View
+        android:id="@+id/line"
+        android:layout_width="300dp"
+        android:layout_height="1dp"
+        android:background="@android:color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/profile_picture"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="15dp"/>
+
+    <TextView
+        android:id="@+id/username_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="4dp"
+        android:text="@string/name_field"
+        android:textColor="@color/black"
+        android:textSize="23dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/profile_picture"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/profile_picture"/>
+
+    <View
+        android:id="@+id/underline"
+        android:layout_width="170dp"
+        android:layout_height="2dp"
+        android:background="@android:color/black"
+        app:layout_constraintStart_toStartOf="@id/username_label"
+        app:layout_constraintTop_toBottomOf="@id/username_label"
+        android:layout_marginBottom="15dp"/>
+
+    <TextView
+        android:id="@+id/email_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/email_field"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:textColor="#AEA8A8"
+        app:layout_constraintStart_toStartOf="@+id/username_label"
+        app:layout_constraintTop_toBottomOf="@+id/username_label"
+        android:layout_marginTop="8dp"/>
+
+    <TextView
+        android:id="@+id/country_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/country_field"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        app:layout_constraintStart_toStartOf="@+id/line"
+        app:layout_constraintTop_toBottomOf="@+id/line"
+        android:layout_marginTop="14dp"/>
+
+    <TextView
+        android:id="@+id/birthdate_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/birthdate_field"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        app:layout_constraintStart_toStartOf="@+id/country_label"
+        app:layout_constraintTop_toBottomOf="@+id/country_label"
+        android:layout_marginTop="8dp"
+        />
+
+    <ImageView
+        android:id="@+id/logout"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:src="@drawable/ic_logout"
+        android:background="@color/white"
+        app:layout_constraintStart_toStartOf="@id/birthdate_label"
+        app:layout_constraintTop_toBottomOf="@id/birthdate_label"
+        android:layout_marginTop="8dp"
+        app:tint="@color/red"/>
+
+    <TextView
+        android:id="@+id/logout_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cerrar sesión"
+        android:textStyle="bold"
+        android:textColor="@color/red"
+        android:textSize="20dp"
+        app:layout_constraintStart_toEndOf="@+id/logout"
+        app:layout_constraintTop_toBottomOf="@+id/birthdate_label"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="3dp"
+        />
+
+    <Button
+        android:id="@+id/register_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Editar Perfil"
+        android:textSize="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/logout_label"
+        android:layout_marginTop="15dp"/>
+    <ImageView
+        android:id="@+id/delete"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:src="@drawable/ic_delete"
+        android:background="@color/white"
+        android:layout_marginTop="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@id/logout"
+        app:layout_constraintTop_toBottomOf="@id/register_button"
+        android:layout_marginBottom="14dp"
+        app:tint="@color/red"/>
+
+    <TextView
+        android:id="@+id/delete_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Eliminar cuenta"
+        android:textStyle="bold"
+        android:textColor="@color/red"
+        android:textSize="20dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/delete"
+        app:layout_constraintTop_toBottomOf="@id/register_button"
+        android:layout_marginBottom="14dp"
+        android:layout_marginStart="3dp"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>
